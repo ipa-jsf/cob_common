@@ -50,8 +50,6 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 ****************************************************************/
- 
-#include "../include/cob_vision_utils/StdAfx.h"
 
 #ifdef __LINUX__
 #include "cob_vision_utils/VisionUtils.h"
@@ -654,7 +652,7 @@ unsigned long ipa_Utils::FilterTearOffEdges(cv::Mat& xyzImage, cv::Mat* mask, fl
 				dot = (float)vDiff.ddot(vLeft);
 				//dot = vDiff.Dot(vLeft);
 				angle = (float)std::acos(dot);
-				//angle = Wm4::Math<float>::ACos( dot );
+				//angle = IPA_WM_VERSION::Math<float>::ACos( dot );
 				if (angle > t_upper || angle < t_lower)
 				{
 					score++;
@@ -688,7 +686,7 @@ unsigned long ipa_Utils::FilterTearOffEdges(cv::Mat& xyzImage, cv::Mat* mask, fl
 				dot = (float)vDiff.ddot(vLeft);
 				//dot = vDiff.Dot(vLeft);
 				angle = (float)std::acos(dot);
-				//angle = Wm4::Math<float>::ACos( dot );
+				//angle = IPA_WM_VERSION::Math<float>::ACos( dot );
 				if (angle > t_upper || angle < t_lower)
 				{
 					score++;
@@ -722,7 +720,7 @@ unsigned long ipa_Utils::FilterTearOffEdges(cv::Mat& xyzImage, cv::Mat* mask, fl
 				dot = (float)vDiff.ddot(vLeft);
 				//dot = vDiff.Dot(vLeft);
 				angle = (float)std::acos(dot);
-				//angle = Wm4::Math<float>::ACos( dot );
+				//angle = IPA_WM_VERSION::Math<float>::ACos( dot );
 				if (angle > t_upper || angle < t_lower)
 				{
 					score++;
@@ -755,7 +753,7 @@ unsigned long ipa_Utils::FilterTearOffEdges(cv::Mat& xyzImage, cv::Mat* mask, fl
 				dot = (float)vDiff.ddot(vLeft);
 				//dot = vDiff.Dot(vLeft);
 				angle = (float)std::acos(dot);
-				//angle = Wm4::Math<float>::ACos( dot );
+				//angle = IPA_WM_VERSION::Math<float>::ACos( dot );
 				if (angle > t_upper || angle < t_lower)
 				{
 					score++;

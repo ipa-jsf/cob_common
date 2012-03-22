@@ -60,7 +60,7 @@
 #ifndef __IPA_CAMERASENSORTOOLBOX_H__
 #define __IPA_CAMERASENSORTOOLBOX_H__
 
-#include "StdAfx.h"
+#include "../../../../../cob_object_perception_intern/windows/src/PreCompiledHeaders/StdAfx.h"
 
 #ifdef __LINUX__
 	#include "cob_vision_utils/CameraSensorDefines.h"

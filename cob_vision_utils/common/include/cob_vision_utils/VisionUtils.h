@@ -59,8 +59,6 @@
 #ifndef __IPA_VISIONUTILS_H__
 #define __IPA_VISIONUTILS_H__
 
-#include "StdAfx.h"
-
 #ifdef __LINUX__
 	#include "cob_vision_utils/GlobalDefines.h"
 #else
