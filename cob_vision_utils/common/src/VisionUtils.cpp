@@ -785,11 +785,11 @@ unsigned long ipa_Utils::FilterTearOffEdges(cv::Mat& xyzImage, cv::Mat* mask, fl
 	return ipa_Utils::RET_OK;
 }
 
-unsigned long ipa_Utils::FilterSpeckles(cv::Mat& img, int maxSpeckleSize, double maxDiff, cv::Mat& _buf )
+unsigned long ipa_Utils::FilterSpeckles(cv::Mat& img, int maxSpeckleSize, 
+	double maxDiff, cv::Mat& _buf)
 {
     CV_Assert( img.type() == CV_32FC3 );
 
- 
     float newVal = 0;
     int width = img.cols, height = img.rows, npixels = width*height;
     size_t bufSize = npixels*(int)(sizeof(cv::Point_<short>) + sizeof(int) + sizeof(uchar));
