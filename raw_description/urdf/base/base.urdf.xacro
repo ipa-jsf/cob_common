@@ -16,8 +16,6 @@
   <!-- all link geometry sizes are obtained from Function provided CAD model unless stated otherwise -->
   <!-- all simplified collision geometry are hand approximated from CAD model, sometimes from respective bounding boxes -->
 
-  <property name="M_PI" value="3.1415926535897931" />
-
   <property name="caster_offset_x" value="0.368" />  <!--modify here-->
   <property name="caster_offset_y1" value="0.126" />
   <property name="caster_offset_y2" value="0.178" />
@@ -164,7 +162,7 @@
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0.045" rpy="${M_PI/2} 0 0" />  <!--TODO: fix this in stl orientation not in urdf -->
+        <origin xyz="0 0 0.045" rpy="${M_PI/2} 0 3.14" />  <!--TODO: fix this in stl orientation not in urdf -->
         <geometry>
           <mesh filename="package://raw_description/meshes/base/base.stl"/>
           <!--box size="${base_size_x} ${base_size_y} ${base_collision_size_z}" /-->
@@ -176,7 +174,7 @@
         <origin xyz="0 0 0.045" rpy="${M_PI/2} 0 0" />  <!--TODO: fix this in stl orientation not in urdf -->
         <geometry>
 		  <!--box size="0.001 0.001 0.001" /-->
-	      <mesh filename="package://raw_description/meshes/base/base.stlb"/>
+	      <mesh filename="package://raw_description/meshes/base/base.stl"/>
           <!--box size="${base_size_x} ${base_size_y} ${base_collision_size_z}" /-->
         </geometry>
       </collision>
@@ -217,12 +215,12 @@
     <!--modify here for test: front,base and top lasers -->
     <!-- base laser front -->
     <xacro:sick_s300_laser_v0 name="${name}_laser_front" parent="${name}" ros_topic="scan_front_raw" update_rate="10" min_angle="-2.3562" max_angle="2.3562" >
-      <origin xyz="${base_laser_x} ${-base_laser_y} ${base_laser_z}" rpy="0 0 ${-M_PI/2}" />
+      <origin xyz="${base_laser_x} ${-base_laser_y} ${base_laser_z}" rpy="0 0 ${-M_PI/4}" />
     </xacro:sick_s300_laser_v0>
 
     <!-- base laser rear -->
     <xacro:sick_s300_laser_v0 name="${name}_laser_rear" parent="${name}" ros_topic="scan_rear_raw" update_rate="10" min_angle="-2.3562" max_angle="2.3562" >
-      <origin xyz="${-base_laser_x} ${base_laser_y} ${base_laser_z}" rpy="0 0 ${M_PI/2}" />
+      <origin xyz="${-base_laser_x} ${base_laser_y} ${base_laser_z}" rpy="0 0 ${3*M_PI/4}" />
     </xacro:sick_s300_laser_v0>
 
 
@@ -243,7 +241,7 @@
 
    <!-- cam3d -->
    <xacro:cob_kinect_v0 name="${name}_cam3d" ros_topic="cam3d" parent="${name}_link">
-      <origin xyz="0.51 0.12 0.27" rpy="-1.57 0 -1.57" />
+      <origin xyz="0.51 0.12 0.27" rpy="-${M_PI/2} 0 -${M_PI/2}" />
    </xacro:cob_kinect_v0>
 
 
